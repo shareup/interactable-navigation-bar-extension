@@ -1,10 +1,3 @@
-//
-//  Extensions.swift
-//  ExtendingNavigationBar
-//
-//  Created by Sashko Potapov on 15.11.2022.
-//
-
 import Foundation
 import UIKit
 

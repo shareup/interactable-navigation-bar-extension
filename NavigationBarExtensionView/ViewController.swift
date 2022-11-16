@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  ExtendingNavigationBar
-//
-//  Created by Sashko Potapov on 15.11.2022.
-//
-
 import UIKit
 
 private let CellReuseIdentifier = "candyCellReuseIdentifier"
