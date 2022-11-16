@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AFBD8ED82923A9AC00837249 /* ExtendingNavigationBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExtendingNavigationBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFBD8ED82923A9AC00837249 /* InteractableNavigationBarExtension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InteractableNavigationBarExtension.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFBD8EDB2923A9AC00837249 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFBD8EDD2923A9AC00837249 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AFBD8EDF2923A9AC00837249 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 		AFBD8ECF2923A9AC00837249 = {
 			isa = PBXGroup;
 			children = (
-				AFBD8EDA2923A9AC00837249 /* ExtendingNavigationBar */,
+				AFBD8EDA2923A9AC00837249 /* InteractableNavigationBarExtension */,
 				AFBD8ED92923A9AC00837249 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,12 +54,12 @@
 		AFBD8ED92923A9AC00837249 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AFBD8ED82923A9AC00837249 /* ExtendingNavigationBar.app */,
+				AFBD8ED82923A9AC00837249 /* InteractableNavigationBarExtension.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AFBD8EDA2923A9AC00837249 /* ExtendingNavigationBar */ = {
+		AFBD8EDA2923A9AC00837249 /* InteractableNavigationBarExtension */ = {
 			isa = PBXGroup;
 			children = (
 				AFBD8EDB2923A9AC00837249 /* AppDelegate.swift */,
@@ -73,15 +73,15 @@
 				AFBD8EE62923A9AD00837249 /* LaunchScreen.storyboard */,
 				AFBD8EE92923A9AD00837249 /* Info.plist */,
 			);
-			path = ExtendingNavigationBar;
+			path = InteractableNavigationBarExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AFBD8ED72923A9AC00837249 /* ExtendingNavigationBar */ = {
+		AFBD8ED72923A9AC00837249 /* InteractableNavigationBarExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AFBD8EEC2923A9AD00837249 /* Build configuration list for PBXNativeTarget "ExtendingNavigationBar" */;
+			buildConfigurationList = AFBD8EEC2923A9AD00837249 /* Build configuration list for PBXNativeTarget "InteractableNavigationBarExtension" */;
 			buildPhases = (
 				AFBD8ED42923A9AC00837249 /* Sources */,
 				AFBD8ED52923A9AC00837249 /* Frameworks */,
@@ -91,9 +91,9 @@
 			);
 			dependencies = (
 			);
-			name = ExtendingNavigationBar;
+			name = InteractableNavigationBarExtension;
 			productName = ExtendingNavigationBar;
-			productReference = AFBD8ED82923A9AC00837249 /* ExtendingNavigationBar.app */;
+			productReference = AFBD8ED82923A9AC00837249 /* InteractableNavigationBarExtension.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -111,7 +111,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AFBD8ED32923A9AC00837249 /* Build configuration list for PBXProject "ExtendingNavigationBar" */;
+			buildConfigurationList = AFBD8ED32923A9AC00837249 /* Build configuration list for PBXProject "interactable-navigation-bar-extension" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -124,7 +124,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AFBD8ED72923A9AC00837249 /* ExtendingNavigationBar */,
+				AFBD8ED72923A9AC00837249 /* InteractableNavigationBarExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -291,8 +291,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 762ZKAAPM9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ExtendingNavigationBar/Info.plist;
+				INFOPLIST_FILE = InteractableNavigationBarExtension/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -302,7 +303,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = example.ExtendingNavigationBar;
+				PRODUCT_BUNDLE_IDENTIFIER = "interactable-navigation-bar-extension.app.shareup";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -317,8 +318,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 762ZKAAPM9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ExtendingNavigationBar/Info.plist;
+				INFOPLIST_FILE = InteractableNavigationBarExtension/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -328,7 +330,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = example.ExtendingNavigationBar;
+				PRODUCT_BUNDLE_IDENTIFIER = "interactable-navigation-bar-extension.app.shareup";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -339,7 +341,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AFBD8ED32923A9AC00837249 /* Build configuration list for PBXProject "ExtendingNavigationBar" */ = {
+		AFBD8ED32923A9AC00837249 /* Build configuration list for PBXProject "interactable-navigation-bar-extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AFBD8EEA2923A9AD00837249 /* Debug */,
@@ -348,7 +350,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AFBD8EEC2923A9AD00837249 /* Build configuration list for PBXNativeTarget "ExtendingNavigationBar" */ = {
+		AFBD8EEC2923A9AD00837249 /* Build configuration list for PBXNativeTarget "InteractableNavigationBarExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AFBD8EED2923A9AD00837249 /* Debug */,
