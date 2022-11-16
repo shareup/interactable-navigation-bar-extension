@@ -1,4 +1,4 @@
-# InteractableNavigationBarExtension
+# NavigationBarExtensionView
 
 This is a sample code for our blog post on how to make a Telegram/Github-like interactable extension for the `UINavigationBar`.
 
