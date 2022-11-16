@@ -25,16 +25,16 @@ public final class ProgressBarView: UIView {
 
     init() {
         super.init(frame: .zero)
-        
+
         addSubview(mainVerticalStackView)
-        
+
         NSLayoutConstraint.activate([
             mainVerticalStackView.topAnchor.constraint(equalTo: topAnchor),
             mainVerticalStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             mainVerticalStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             mainVerticalStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
-        
+
         backgroundColor = .white
     }
 
@@ -140,4 +140,3 @@ private extension ProgressBarView {
         return view
     }
 }
-

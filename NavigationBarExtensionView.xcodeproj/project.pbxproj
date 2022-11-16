@@ -46,7 +46,7 @@
 		AFBD8ECF2923A9AC00837249 = {
 			isa = PBXGroup;
 			children = (
-				AFBD8EDA2923A9AC00837249 /* InteractableNavigationBarExtension */,
+				AFBD8EDA2923A9AC00837249 /* NavigationBarExtensionView */,
 				AFBD8ED92923A9AC00837249 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,7 +59,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AFBD8EDA2923A9AC00837249 /* InteractableNavigationBarExtension */ = {
+		AFBD8EDA2923A9AC00837249 /* NavigationBarExtensionView */ = {
 			isa = PBXGroup;
 			children = (
 				AFBD8EDB2923A9AC00837249 /* AppDelegate.swift */,
@@ -73,7 +73,7 @@
 				AFBD8EE62923A9AD00837249 /* LaunchScreen.storyboard */,
 				AFBD8EE92923A9AD00837249 /* Info.plist */,
 			);
-			path = InteractableNavigationBarExtension;
+			path = NavigationBarExtensionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -111,7 +111,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AFBD8ED32923A9AC00837249 /* Build configuration list for PBXProject "interactable-navigation-bar-extension" */;
+			buildConfigurationList = AFBD8ED32923A9AC00837249 /* Build configuration list for PBXProject "NavigationBarExtensionView" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -341,7 +341,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AFBD8ED32923A9AC00837249 /* Build configuration list for PBXProject "interactable-navigation-bar-extension" */ = {
+		AFBD8ED32923A9AC00837249 /* Build configuration list for PBXProject "NavigationBarExtensionView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AFBD8EEA2923A9AD00837249 /* Debug */,

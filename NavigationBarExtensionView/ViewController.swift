@@ -11,7 +11,6 @@ private let CellReuseIdentifier = "candyCellReuseIdentifier"
 private let ProgressBarViewHeight: CGFloat = 36
 
 public final class ViewController: UIViewController {
-    
     private let sweets: [Sweets] = [
         .init(name: "Candy", emoji: "🍬"),
         .init(name: "Lollypop", emoji: "🍭"),
@@ -19,7 +18,7 @@ public final class ViewController: UIViewController {
         .init(name: "Donut", emoji: "🍩"),
         .init(name: "Cake", emoji: "🎂"),
     ]
-    
+
     private var timer: Timer?
     private lazy var progressBarView: ProgressBarView = .init()
 
@@ -28,16 +27,20 @@ public final class ViewController: UIViewController {
         tv.translatesAutoresizingMaskIntoConstraints = false
         return tv
     }()
-    
+
     private lazy var dataSource: UITableViewDiffableDataSource<String, Sweets> = {
         let ds = UITableViewDiffableDataSource<String, Sweets>(
             tableView: tableView,
-            cellProvider: { [weak self] (tableView: UITableView, indexPath: IndexPath, sweets: Sweets) in
+            cellProvider: { [weak self] (
+                tableView: UITableView,
+                indexPath: IndexPath,
+                sweets: Sweets
+            ) in
                 let cell = tableView.dequeueReusableCell(
                     withIdentifier: CellReuseIdentifier,
                     for: indexPath
                 )
-                
+
                 var config = UIListContentConfiguration.sidebarCell()
                 config.image = sweets.emoji.image()
                 config.text = sweets.name
@@ -47,72 +50,72 @@ public final class ViewController: UIViewController {
         )
         return ds
     }()
-    
+
     private lazy var makeTeaButton: UIButton = {
         var c = UIButton.Configuration.plain()
         c.image = UIImage(systemName: "cup.and.saucer")
         let b = UIButton(configuration: c)
         return b
     }()
-        
-    public override func viewDidLoad() {
+
+    override public func viewDidLoad() {
         super.viewDidLoad()
         setUpLayout()
         setUpProgressBar()
     }
-    
+
     private func setUpLayout() {
         title = "Sweets"
-        
+
         navigationController?.navigationBar.backgroundColor = .white
         tableView.register(
             UITableViewCell.self,
             forCellReuseIdentifier: CellReuseIdentifier
         )
-        
+
         tableView.delegate = self
-        
+
         view.addSubview(tableView)
-        
+
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         ])
-        
+
         var snapshot = NSDiffableDataSourceSnapshot<String, Sweets>()
         snapshot.appendSections(["Initial"])
         snapshot.appendItems(sweets, toSection: "Initial")
-        
+
         dataSource.apply(snapshot)
-        
+
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: makeTeaButton)
     }
-    
+
     private func setUpProgressBar() {
         guard let navigationBar = navigationController?.navigationBar else { return }
-        
+
         navigationBar.addSubview(progressBarView)
         progressBarView.translatesAutoresizingMaskIntoConstraints = false
-        
+
         NSLayoutConstraint.activate([
             progressBarView.trailingAnchor.constraint(equalTo: navigationBar.trailingAnchor),
             progressBarView.leadingAnchor.constraint(equalTo: navigationBar.leadingAnchor),
             progressBarView.topAnchor.constraint(equalTo: navigationBar.bottomAnchor),
             progressBarView.heightAnchor.constraint(equalToConstant: ProgressBarViewHeight),
         ])
-        
+
         progressBarView.isHidden = true
-        
-        progressBarView.setCancelAction({ [weak self] in
+
+        progressBarView.setCancelAction { [weak self] in
             self?.timer?.invalidate()
             self?.progressBarView.isHidden = true
             UIView.animate(
                 withDuration: 0.25,
                 animations: { self?.additionalSafeAreaInsets = .zero }
             )
-        })
+        }
 
         makeTeaButton.addAction(
             UIAction(handler: { [weak self] _ in
@@ -126,37 +129,45 @@ public final class ViewController: UIViewController {
             for: .touchUpInside
         )
     }
-    
+
     private func setUpTimer() {
-        DispatchQueue.global(qos: .background).async(execute: {
+        DispatchQueue.global(qos: .background).async {
             var progress = 0.0
-            self.timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { [weak self] timer in
-                progress += 0.025
-                DispatchQueue.main.async(execute: {
-                    self?.progressBarView.configure(title: "Preparing delicious tea...", subtitle: "", progress: progress)
-                    if progress >= 1.0 {
-                        timer.invalidate()
-                        UIView.animate(withDuration: 0.25, animations: {
-                            self?.progressBarView.isHidden = true
-                            self?.additionalSafeAreaInsets = .zero
-                        })
+            self.timer = Timer.scheduledTimer(
+                withTimeInterval: 0.1,
+                repeats: true,
+                block: { [weak self] timer in
+                    progress += 0.025
+                    DispatchQueue.main.async {
+                        self?.progressBarView.configure(
+                            title: "Preparing delicious tea...",
+                            subtitle: "",
+                            progress: progress
+                        )
+                        if progress >= 1.0 {
+                            timer.invalidate()
+                            UIView.animate(withDuration: 0.25, animations: {
+                                self?.progressBarView.isHidden = true
+                                self?.additionalSafeAreaInsets = .zero
+                            })
+                        }
                     }
-                })
-            })
-            
+                }
+            )
+
             self.timer?.fire()
             RunLoop.current.run()
-        })
+        }
     }
 }
 
 extension ViewController: UITableViewDelegate {
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
         let vc = DetailViewController(sweets: item)
         navigationController?.pushViewController(vc, animated: true)
     }
-    
+
     public func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
         DispatchQueue
             .main
